@@ -6,7 +6,6 @@
 
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![中文](https://img.shields.io/badge/Language-中文-red.svg)](README.zh-CN.md)
-[![Buy me a coffee](https://img.shields.io/badge/💖-Donate-orange.svg)](DONATE.md)
 
 Expose **UndertaleModTool (UMT)** to any [Model Context Protocol (MCP)](https://modelcontextprotocol.io) client as first-class tools — inspect GameMaker games, read/decompile/edit GML code, list resources, and run arbitrary C# scripts, all from your AI agent.
 

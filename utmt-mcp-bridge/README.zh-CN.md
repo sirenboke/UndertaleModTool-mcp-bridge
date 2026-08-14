@@ -6,7 +6,6 @@
 
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![中文](https://img.shields.io/badge/Language-中文-red.svg)](README.zh-CN.md)
-[![请我喝咖啡](https://img.shields.io/badge/💖-捐赠-orange.svg)](DONATE.md)
 
 将 **UndertaleModTool (UMT)** 以 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) 工具的形式暴露给任意 AI 客户端——检查 GameMaker 游戏、读取/反编译/修改 GML 代码、列出资源、执行任意 C# 脚本，全部通过你的 AI 代理完成。
 

@@ -30,7 +30,7 @@ def detect_bridge_url():
                     return f"http://{ip}:9500"
     except Exception:
         pass
-    return "http://127.0.0.1:9500"
+    return "http://192.168.160.1:9500"
 
 
 BRIDGE_URL = detect_bridge_url()

@@ -10,28 +10,23 @@ If this project helped you, feel free to buy me a coffee ☕
 
 <https://github.com/sponsors/yourname>
 
-<!-- ============================================================
-     其他捐赠方式已注释掉，页面只显示 GitHub Sponsors。
-     需要添加时删除对应 <!-- 和 --> 即可。
-     ============================================================
-
-### 🅿️ PayPal
-
-<https://www.paypal.me/yourname>
-
-### 🚀 爱发电 / AFDIAN
-
-<https://afdian.com/a/yourname>
-
 ### ☕ 微信赞赏 / WeChat Reward
+
+<!-- 在下面替换成你的微信赞赏码图片地址 -->
+<!-- Replace with your WeChat reward QR code image URL -->
 
 ![WeChat Reward](images/wechat_reward.png)
 
 ### 💰 支付宝 / Alipay
 
+<!-- 在下面替换成你的支付宝收款码图片地址 -->
+<!-- Replace with your Alipay QR code image URL -->
+
 ![Alipay](images/alipay.png)
 
-============================================================ -->
+### 🅿️ PayPal
+
+<https://www.paypal.me/yourname>
 
 ---
 
@@ -45,5 +40,5 @@ If this project helped you, feel free to buy me a coffee ☕
 
 ---
 
-> 💡 如果你愿意，也可以直接通过 GitHub Issue 告诉我你想支持的理由～
+> 💡 提示：如果你愿意，也可以直接通过 GitHub Issue 告诉我你想支持的理由～
 > 💡 Tip: You can also tell me why you're supporting via a GitHub Issue if you like!

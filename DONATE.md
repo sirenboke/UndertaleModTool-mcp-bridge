@@ -8,7 +8,7 @@ If this project helped you, feel free to buy me a coffee ☕
 
 ### 🧡 GitHub Sponsors
 
-<https://github.com/sponsors/yourname>
+<https://github.com/sponsors/sirenboke>
 
 
 ### 🚀 ko-fi / AFDIAN

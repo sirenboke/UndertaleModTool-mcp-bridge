@@ -2,7 +2,6 @@
 """
 UndertaleModTool MCP Server
 通过HTTP桥接与UndertaleModTool中的.csx脚本通信
-使用stdio传输，注册为Hermes的MCP工具
 """
 
 import os
@@ -30,7 +29,7 @@ def detect_bridge_url():
                     return f"http://{ip}:9500"
     except Exception:
         pass
-    return "http://192.168.160.1:9500"
+    return "http://127.0.0.1:9500"
 
 
 BRIDGE_URL = detect_bridge_url()

@@ -1,4 +1,4 @@
-# UMT MCP Bridge
+# utmt MCP Bridge
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourname/utmt-mcp-bridge/pulls)
@@ -7,7 +7,7 @@
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![中文](https://img.shields.io/badge/Language-中文-red.svg)](README.zh-CN.md)
 
-Expose **UndertaleModTool (UMT)** to any [Model Context Protocol (MCP)](https://modelcontextprotocol.io) client as first-class tools — inspect GameMaker games, read/decompile/edit GML code, list resources, and run arbitrary C# scripts, all from your AI agent.
+Expose **UndertaleModTool (utmt)** to any [Model Context Protocol (MCP)](https://modelcontextprotocol.io) client as first-class tools — inspect GameMaker games, read/decompile/edit GML code, list resources, and run arbitrary C# scripts, all from your AI agent.
 
 ---
 
@@ -15,16 +15,16 @@ Expose **UndertaleModTool (UMT)** to any [Model Context Protocol (MCP)](https://
 
 | Tool | Description |
 |------|-------------|
-| `umt_info` | Game metadata (name, code/sprite/object/room/sound counts) |
-| `umt_code_list` | List GML code entries (optional name filter + limit) |
-| `umt_code_get` | Decompile & fetch GML source for a code entry |
-| `umt_code_set` | Compile & replace GML code in the loaded game |
-| `umt_search` | Search across code / sprites / objects / rooms |
-| `umt_sprites` | List sprites with dimensions |
-| `umt_objects` | List game objects |
-| `umt_rooms` | List rooms with sizes |
-| `umt_save` | Save the loaded `data.win` |
-| `umt_run` | Execute arbitrary C# in UMT context (`code=` or `b64=` base64) |
+| `utmt_info` | Game metadata (name, code/sprite/object/room/sound counts) |
+| `utmt_code_list` | List GML code entries (optional name filter + limit) |
+| `utmt_code_get` | Decompile & fetch GML source for a code entry |
+| `utmt_code_set` | Compile & replace GML code in the loaded game |
+| `utmt_search` | Search across code / sprites / objects / rooms |
+| `utmt_sprites` | List sprites with dimensions |
+| `utmt_objects` | List game objects |
+| `utmt_rooms` | List rooms with sizes |
+| `utmt_save` | Save the loaded `data.win` |
+| `utmt_run` | Execute arbitrary C# in utmt context (`code=` or `b64=` base64) |
 
 ## 🏗 Architecture
 
@@ -38,11 +38,11 @@ Expose **UndertaleModTool (UMT)** to any [Model Context Protocol (MCP)](https://
                                                    ┌──────────▼───────────┐
                                                    │  mcp_bridge_v6.csx   │
                                                    │  C# script running   │
-                                                   │  inside UMT (Windows)│
+                                                   │  inside utmt (Windows)│
                                                    └──────────────────────┘
 ```
 
-- **`server/undertale_mcp_server.py`** — MCP server speaking stdio JSON-RPC. Bridges to UMT over HTTP.
+- **`server/undertale_mcp_server.py`** — MCP server speaking stdio JSON-RPC. Bridges to utmt over HTTP.
 - **`bridge/mcp_bridge_v6.csx`** — C# script executed inside UndertaleModTool. Hosts a `TcpListener` HTTP API on port `9500`. UI stays responsive; runs on a background thread.
 
 ## 📦 Requirements
@@ -53,14 +53,14 @@ Expose **UndertaleModTool (UMT)** to any [Model Context Protocol (MCP)](https://
 
 ## 🚀 Quick Start
 
-### 1. Start the bridge inside UMT (Windows)
+### 1. Start the bridge inside utmt (Windows)
 
 1. Open UndertaleModTool and load a game (`data.win`).
 2. Open **Scripts → Run Script** from the menu bar.
 3. Load and run `bridge/mcp_bridge_v6.csx`.
 4. You should see: `MCP Bridge v6 on port 9500`. The bridge listens on `0.0.0.0:9500`.
 
-> ⚠ Keep UMT open while using the MCP tools.
+> ⚠ Keep utmt open while using the MCP tools.
 
 ### 2. Configure the MCP server
 
@@ -95,19 +95,19 @@ Ask your agent: *"List all GML code entries containing 'twitch'"*, or *"Get the 
 
 **1. Read a decompiled function**
 > You: *What does `scr_newGame` do?*
-> Agent: calls `umt_code_get(name="scr_newGame")` → returns the full GML source.
+> Agent: calls `utmt_code_get(name="scr_newGame")` → returns the full GML source.
 
 **2. Search for a resource across the whole game**
 > You: *Find everything related to "vip".*
-> Agent: calls `umt_search(query="vip")` → lists matching code / sprites / objects / rooms.
+> Agent: calls `utmt_search(query="vip")` → lists matching code / sprites / objects / rooms.
 
 **3. Edit GML and save**
 > You: *Set `global.dev` to 1 in `scr_newGame`, then save.*
-> Agent: calls `umt_code_get` → `umt_code_set(name="scr_newGame", gml="<modified>")` → `umt_save`. Remember to save the file in UMT afterwards.
+> Agent: calls `utmt_code_get` → `utmt_code_set(name="scr_newGame", gml="<modified>")` → `utmt_save`. Remember to save the file in utmt afterwards.
 
 **4. Run a custom C# snippet against the loaded game**
 > You: *List all objects that have a sprite.*
-> Agent: calls `umt_run(code="string.Join(\",\", Data.GameObjects.Where(o => o.Sprite != null).Select(o => o.Name.Content))")`.
+> Agent: calls `utmt_run(code="string.Join(\",\", Data.GameObjects.Where(o => o.Sprite != null).Select(o => o.Name.Content))")`.
 
 ## 🌐 Network Configuration
 
@@ -115,10 +115,10 @@ The MCP server auto-detects the Windows host address by reading the default gate
 
 | Environment variable | Default | Description |
 |---|---|---|
-| `UMT_BRIDGE_URL` | auto-detected (gateway IP) | Full URL of the bridge, e.g. `http://192.168.1.100:9500` |
+| `utmt_BRIDGE_URL` | auto-detected (gateway IP) | Full URL of the bridge, e.g. `http://192.168.1.100:9500` |
 
 ```bash
-export UMT_BRIDGE_URL="http://192.168.1.100:9500"
+export utmt_BRIDGE_URL="http://192.168.1.100:9500"
 ```
 
 Or via Hermes config:
@@ -129,7 +129,7 @@ mcp_servers:
     command: python3
     args: [/path/to/server/undertale_mcp_server.py]
     env:
-      UMT_BRIDGE_URL: "http://192.168.1.100:9500"
+      utmt_BRIDGE_URL: "http://192.168.1.100:9500"
 ```
 
 ## 🔌 HTTP API Reference
@@ -154,15 +154,15 @@ The bridge exposes a minimal JSON-over-HTTP API (all endpoints accept POST with 
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `Bridge not running` | UMT closed or script not executed | Run the `.csx` in UMT and keep UMT open |
-| Connection timeout | Wrong bridge URL | `curl http://<host-ip>:9500/ping`; fix with `UMT_BRIDGE_URL` |
+| `Bridge not running` | utmt closed or script not executed | Run the `.csx` in utmt and keep utmt open |
+| Connection timeout | Wrong bridge URL | `curl http://<host-ip>:9500/ping`; fix with `utmt_BRIDGE_URL` |
 | MCP can't reach Windows from WSL | Gateway IP changed | Auto-detection handles it; verify with `ip route show default` |
-| Changes to `.csx` not taking effect | Bridge not restarted | Re-run the script in UMT |
-| `umt_code_set` compile error | Invalid GML | Fix GML syntax; UMT compiler reports diagnostics |
+| Changes to `.csx` not taking effect | Bridge not restarted | Re-run the script in utmt |
+| `utmt_code_set` compile error | Invalid GML | Fix GML syntax; utmt compiler reports diagnostics |
 
 ## 🤝 Contributing
 
-PRs welcome! Keep the bridge script dependency-free (no NuGet packages beyond UMT's built-ins) and the MCP server stdlib-only (no pip installs).
+PRs welcome! Keep the bridge script dependency-free (no NuGet packages beyond utmt's built-ins) and the MCP server stdlib-only (no pip installs).
 
 ## 📄 License
 

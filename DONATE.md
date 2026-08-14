@@ -15,14 +15,6 @@ If this project helped you, feel free to buy me a coffee ☕
      需要添加时删除对应 <!-- 和 --> 即可。
      ============================================================
 
-### 🅿️ PayPal
-
-<https://www.paypal.me/yourname>
-
-### 🚀 爱发电 / AFDIAN
-
-<https://afdian.com/a/yourname>
-
 ### ☕ 微信赞赏 / WeChat Reward
 
 ![WeChat Reward](images/wechat_reward.png)
@@ -32,6 +24,13 @@ If this project helped you, feel free to buy me a coffee ☕
 ![Alipay](images/alipay.png)
 
 ============================================================ -->
+### 🅿️ PayPal
+
+<https://www.paypal.me/hancaho46>
+
+### 🚀 ko-fi / AFDIAN
+
+<ko-fi.com/hc1091324664gmailcom>
 
 ---
 

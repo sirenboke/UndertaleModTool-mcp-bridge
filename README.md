@@ -179,7 +179,7 @@ If this project helped you, feel free to buy me a coffee ☕
 
 ### 🚀 ko-fi / AFDIAN
 
-<https:ko-fi.com/hc1091324664gmailcom>
+<https://ko-fi.com/hc1091324664gmailcom>
 
 
 > 💡 如果你愿意，也可以直接通过 GitHub Issue 告诉我你想支持的理由～
